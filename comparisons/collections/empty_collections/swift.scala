@@ -1,3 +1,2 @@
-let emptyArray = String[]()
-let emptyDictionary = Dictionary<String, Float>()
-let emptyArrayNoType = []
+let emptyArray = [String]()
+let emptyDictionary = [String: Float]()
