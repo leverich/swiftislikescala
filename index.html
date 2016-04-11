@@ -54,7 +54,7 @@
             <div data-browser="swift" class="browser swift">
               <h4>SWIFT</h4>
               <div data-lang="scala" class="code-block language-scala">
-                <pre><code>println(&quot;Hello, world!&quot;)
+                <pre><code>print(&quot;Hello, world!&quot;)
 </code></pre>
               </div>
             </div>
@@ -155,8 +155,8 @@ val fruitSummary = s&quot;I have ${apples + oranges} &quot; +
               <div data-lang="scala" class="code-block language-scala">
                 <pre><code>let names = [&quot;Anna&quot;, &quot;Alex&quot;, &quot;Brian&quot;, &quot;Jack&quot;]
 let count = names.count
-for i in 0..count {
-    println(&quot;Person \(i + 1) is called \(names[i])&quot;)
+for i in 0..&lt;count {
+    print(&quot;Person \(i + 1) is called \(names[i])&quot;)
 }
 // Person 1 is called Anna
 // Person 2 is called Alex
@@ -187,7 +187,7 @@ for (i &lt;- 0 until count) {
               <h4>SWIFT</h4>
               <div data-lang="scala" class="code-block language-scala">
                 <pre><code>for index in 1...5 {
-    println(&quot;\(index) times 5 is \(index * 5)&quot;)
+    print(&quot;\(index) times 5 is \(index * 5)&quot;)
 }
 // 1 times 5 is 5
 // 2 times 5 is 10
@@ -268,9 +268,8 @@ occupations(&quot;Jayne&quot;) = &quot;Public Relations&quot;
             <div data-browser="swift" class="browser swift">
               <h4>SWIFT</h4>
               <div data-lang="scala" class="code-block language-scala">
-                <pre><code>let emptyArray = String[]()
-let emptyDictionary = Dictionary&lt;String, Float&gt;()
-let emptyArrayNoType = []
+                <pre><code>let emptyArray = [String]()
+let emptyDictionary = [String: Float]()
 </code></pre>
               </div>
             </div>
@@ -454,7 +453,7 @@ numbers.map( number =&gt; 3 * number )
             <div data-browser="swift" class="browser swift">
               <h4>SWIFT</h4>
               <div data-lang="scala" class="code-block language-scala">
-                <pre><code>sort([1, 5, 3, 12, 2]) { $0 &gt; $1 }
+                <pre><code>[1, 5, 3, 12, 2].sort()
 </code></pre>
               </div>
             </div>
@@ -471,7 +470,7 @@ numbers.map( number =&gt; 3 * number )
             <div data-browser="swift" class="browser swift">
               <h4>SWIFT</h4>
               <div data-lang="scala" class="code-block language-scala">
-                <pre><code>func area(#width: Int, #height: Int) -&gt; Int {
+                <pre><code>func area(width width: Int, height: Int) -&gt; Int {
     return width * height
 }
 
@@ -630,9 +629,9 @@ var songCount = 0
  
 for item in library {
     if item is Movie {
-        ++movieCount
+        movieCount += 1
     } else if item is Song {
-        ++songCount
+        songCount += 1
     }
 }
 </code></pre>
@@ -664,14 +663,16 @@ for (item &lt;- library) {
 var songCount = 0
 
 for item in library {
-  switch item {
+    switch item {
     case let movie as Movie:
-      ++movieCount
-      println(&quot;Movie: '\(movie.name)', dir. \(movie.director)&quot;)
+        movieCount += 1
+        print(&quot;Movie: '\(movie.name)', dir. \(movie.director)&quot;)
     case let song as Song:
-      ++songCount
-      println(&quot;Song: '\(song.title)'&quot;)
-  }
+        songCount += 1
+        print(&quot;Song: '\(song.title)'&quot;)
+    default:
+        break;
+    }
 }
 </code></pre>
               </div>
@@ -702,8 +703,9 @@ for (item &lt;- library) {
               <h4>SWIFT</h4>
               <div data-lang="scala" class="code-block language-scala">
                 <pre><code>for object in someObjects {
-    let movie = object as Movie
-    println(&quot;Movie: '\(movie.name)', dir. \(movie.director)&quot;)
+    if let movie = object as? Movie {
+        print(&quot;Movie: '\(movie.name)', dir. \(movie.director)&quot;)
+    }
 }
 </code></pre>
               </div>
@@ -729,7 +731,7 @@ for (item &lt;- library) {
 }
 
 func f&lt;T: Nameable&gt;(x: T) {
-    println(&quot;Name is &quot; + x.name())
+    print(&quot;Name is &quot; + x.name())
 }
 </code></pre>
               </div>
@@ -761,10 +763,10 @@ def f[T &lt;: Nameable](x: T) = {
     var ft: Double { return self / 3.28084 }
 }
 let oneInch = 25.4.mm
-println(&quot;One inch is \(oneInch) meters&quot;)
+print(&quot;One inch is \(oneInch) meters&quot;)
 // prints &quot;One inch is 0.0254 meters&quot;
 let threeFeet = 3.ft
-println(&quot;Three feet is \(threeFeet) meters&quot;)
+print(&quot;Three feet is \(threeFeet) meters&quot;)
 // prints &quot;Three feet is 0.914399970739201 meters&quot;
 </code></pre>
               </div>
